@@ -9,7 +9,13 @@
             <div class="bg-primary text-white p-4 text-center">
                 <h1>Mi Pokedex</h1>
             </div>
-            <p>Has elegido el pokemon: <strong>{{ pokemon | capfirst }}</strong></p>
+            <br>
+            <p>Has elegido el pokemon: <strong>{{ pokemon.name | capfirst }}</strong></p>
+            <h3>Características</h3>
+            <ul>
+                <li>Tipo: {{pokemon.type}}</li>
+                <li>Peso: {{pokemon.weight}}</li>
+                <li>Altura: {{pokemon.height}}</li>
         </div>
     </body>
 </html>
