@@ -10,22 +10,13 @@
                 <h1>Mi Pokedex</h1>
             </div>
             <br>
-            <p>Has elegido el pokemon: <strong>{{ pokemon.name | capfirst }}</strong></p>
-            <h3>Características</h3>
-            <ul>
-                <li>Tipo: {{pokemon.type}}</li>
-                <li>Peso: {{pokemon.weight}}</li>
-                <li>Altura: {{pokemon.height}}</li>
-        </div>
-
-            </div>
-            <br>
             <p>Bienvenido entrenador: <strong>{{ trainer.nameTrainer | capfirst }}</strong></p>
             <h3>Características del Entrenador</h3>
             <ul>
-                <li>Nombre: {{trainer.nameTrainer, lastname}}</li>
+                <li>Nombre: {{trainer.nameTrainer}}</li>
+                <li>Nombre: {{trainer.lastname}}</li>
                 <li>Nivel: {{trainer.level}}</li>
-                <li>Fecha de cumpleaños: {{trainer.bithdate}}</li>
+                <li>Fecha de cumpleaños: {{trainer.birthdate}}</li>
         </div> 
     </body>
 </html>
