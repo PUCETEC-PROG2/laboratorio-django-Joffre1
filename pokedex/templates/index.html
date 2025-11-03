@@ -1,20 +1,34 @@
 {% extends 'base.html' %}
 {% block content %}
-  <p class="p-2">Hola, este es tu primer sitio en Django</p>
-  <h3>Pokemons</h3>
-  <a href="{% url 'trainer_list' %}"><h3>Entrenadores</h3></a>
+  <p class="p-2"></p>
+  <h1>Pokemons</h1>
+  <br>
+  <a href="{% url 'pokedex:add_pokemon' %}">Añadir pokemon</a>
   <div class="row">
     {% for pokemon in pokemons %}
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <a class="card" style="width: 18rem;" href="{% url 'pokemon' pokemon.id %}">
+        <br>
+        <div class="card" style="width: 100%;">
           {% if pokemon.picture %}
-            <img src="{{ pokemon.picture.url }}" class="card-img-top" alt="{{ pokemon.name }}" />
+            <img class="card-img-top"  src="{{ pokemon.picture.url }}" alt="{{ pokemon.name }}" />
           {% endif %}
           <div class="card-body">
-            <p class="card-text">{{ pokemon.name }}</p>
+            <h5 class="card-title"> {{pokemon.name | capfirst }}</h5>
+            <p class ="card-text"> Altura {{pokemon.height}} </p>
+            <p class ="card-text"> Peso {{pokemon.weight}} </p>
+            <a href ="{% url 'pokedex:pokemon' pokemon.id %}" class ="btn btn-info" >
+              <i class="fa-solid fa-eye"></i>
+            </a> 
+            <a href ="{% url 'pokedex:edit_pokemon' pokemon.id %}" class ="btn btn-info" >
+              <i class="fa-solid fa-pencil"></i>
+            </a> 
+            <a href ="{% url 'pokedex:delete_pokemon' pokemon.id %}" class ="btn btn-danger" >
+              <i class="fa-solid fa-trash"></i>
+            </a> 
           </div>
-        </a>
+        </div>
       </div>
     {% endfor %}
+      <a href="{% url 'pokedex:trainer_list' %}"><h3>Entrenadores</h3></a>
   </div>
 {% endblock %}

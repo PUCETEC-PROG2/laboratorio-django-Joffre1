@@ -16,7 +16,7 @@
             <ul class="list-group">
                 {% for trainer in trainers %}
                 <li class="list-group-item">
-                    <a href="{% url "trainer" id=trainer.id %}">{{ trainer | capfirst }}</a>
+                    <a href="{% url 'pokedex:trainer' id=trainer.id %}">{{ trainer | capfirst }}</a>
                 </li>
                 {% endfor %}
             </ul>

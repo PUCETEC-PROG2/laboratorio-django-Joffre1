@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
         <p>Has elegido el pokemon: <strong>{{ pokemon.name | capfirst }}</strong></p>
+            {% if pokemon.picture %}
+            <div class="text-center"></div>
+                <img class="card-img-top mx-auto d-block" src="{{ pokemon.picture.url }}" alt="{{ pokemon.name }}"
++                   style="max-width:400px; height:auto;" />
+          {% endif %}
             <h3>Características</h3>
             <ul>
                 <li>Tipo: {{pokemon.type}}</li>
                 <li>Peso: {{pokemon.weight}}</li>
                 <li>Altura: {{pokemon.height}}</li>
             </ul>
+            <a href="{% url 'pokedex:index' %}" class="btn btn-danger">Regresar</a>
 {% endblock content %}
                    
