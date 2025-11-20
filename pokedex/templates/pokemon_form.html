@@ -5,6 +5,7 @@
         <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{form.as_div}}
+                <br>
                 <button type="submit" class = "btn btn-warning">Guardar</button>
                 <a href="{% url 'pokedex:index' %}" class="btn btn-primary">Regresar</a>
         </form>

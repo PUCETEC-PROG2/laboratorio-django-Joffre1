@@ -3,7 +3,11 @@
   <p class="p-2"></p>
   <h1>Pokemons</h1>
   <br>
-  <h4><a href="{% url 'pokedex:add_pokemon' %}">Añadir pokemon</a></h4>
+  {% if user.is_authenticated %}
+  <h3><a href="{% url 'pokedex:add_pokemon' %}">Añadir pokemon</a></h3>
+  {% endif %}
+     <br>
+      <a href="{% url 'pokedex:trainer_list' %}"><h3>Entrenadores</h3></a>
   <div class="row">
     {% for pokemon in pokemons %}
       <div class="col-sm-12 col-md-6 col-lg-4">
@@ -18,18 +22,20 @@
             <p class ="card-text"> Peso {{pokemon.weight}} </p>
             <a href ="{% url 'pokedex:pokemon' pokemon.id %}" class ="btn btn-info" >
               <i class="fa-solid fa-eye"></i>
-            </a> 
+            </a>
+            
+            {% if user.is_authenticated %}
             <a href ="{% url 'pokedex:edit_pokemon' pokemon.id %}" class ="btn btn-info" >
               <i class="fa-solid fa-pencil"></i>
             </a> 
             <a href ="{% url 'pokedex:delete_pokemon' pokemon.id %}" class ="btn btn-danger" >
               <i class="fa-solid fa-trash"></i>
-            </a> 
+            </a>
+            {% endif %} 
           </div>
         </div>
       </div>
     {% endfor %}
   </div>
-      <br>
-      <a href="{% url 'pokedex:trainer_list' %}"><h3>Entrenadores</h3></a>
+  
 {% endblock %}

@@ -1,4 +1,5 @@
 <html>
+    
     <head>
         <title>Pokedex</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -9,14 +10,35 @@
             <div class="bg-primary text-white p-4 text-center">
                 <h1>Mi Pokedex</h1>
             </div>
+            
             <br>
             <p>Bienvenido entrenador: <strong>{{ trainer.nameTrainer | capfirst }}</strong></p>
+            <br>
+            <div class="row">
+                
+                <div class="col-md-4 text-center">
+                    {% if trainer.pictureTrainer %}
+                        <img src="{{ trainer.pictureTrainer.url }}" 
+                            class="img-fluid rounded-circle border border-5 border-primary" 
+                            style="height: 500px; width: auto; object-fit: cover;" {# O quitar object-fit si no quieres recorte #}
+                            alt="Foto de {{ trainer.nameTrainer }}">
+                        
+                    {% else %}
+                        
+                    {% endif %}
+                </div>
+                
+                <div class="col-md-8">
+
             <h3>Características del Entrenador</h3>
             <ul>
                 <li>Nombre: {{trainer.nameTrainer}}</li>
                 <li>Nombre: {{trainer.lastname}}</li>
                 <li>Nivel: {{trainer.level}}</li>
                 <li>Fecha de cumpleaños: {{trainer.birthdate}}</li>
+                <br>
+                <a href="{% url 'pokedex:trainer_list' %}" class="btn btn-danger">Regresar</a>
         </div> 
+         
     </body>
 </html>

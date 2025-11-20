@@ -14,7 +14,26 @@
         <div class="container">
             <div class="bg-primary text-white p-4 text-center">
                 <img src="{% static "logo.png" %}" alt="" class = "img-fluid">
-            </div>   
+            </div>  
+           {% if request.path != '/login/' %}
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" 
+                style="color: black; text-decoration:none;"
+                onmouseover="this.style.color='red'"
+                onmouseout="this.style.color='black'">
+                    Salir
+                </a>
+                {% else %}
+                    <a href="{% url 'pokedex:login' %}" 
+                    style="color: black; text-decoration:none;"
+                    onmouseover="this.style.color='red'"
+                    onmouseout="this.style.color='black'">
+                        Iniciar sesión
+                    </a>
+                    {% endif %}
+                {% endif %}
+
+
             {% block content %}{% endblock content %} 
         </div>
     </body>
