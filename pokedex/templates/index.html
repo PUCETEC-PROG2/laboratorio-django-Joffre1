@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+  <p class="p-2"></p>
+
+  {% if user.is_authenticated %}
+    <div class="text-right p-2">
+      <h3>
+        <a class="btn btn-success mb-4 ms-2" href="{% url 'pokedex:add_pokemon' %}">
+          <i class="fa-solid fa-plus"></i>
+          Añadir pokemon
+        </a>
+      </h3>
+      
+    </div>
+  {% endif %}
+
+  <h1>Pokemons</h1>
+  <br />
+
+  <div class="row">
+    {% for pokemon in pokemons %}
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <br />
+        <div class="card" style="width: 100%;">
+          {% if pokemon.picture %}
+            <img class="card-img-top" src="{{ pokemon.picture.url }}" alt="{{ pokemon.name }}" />
+          {% endif %}
+          <div class="card-body">
+            <h1 class="card-title">{{ pokemon.name|capfirst }}</h1>
+            <p class="card-text">Altura {{ pokemon.height }}</p>
+            <p class="card-text">Peso {{ pokemon.weight }}</p>
+            <a href="{% url 'pokedex:pokemon' pokemon.id %}" class="btn btn-info"><i class="fa-solid fa-eye"></i></a>
+
+            {% if user.is_authenticated %}
+              <a href="{% url 'pokedex:edit_pokemon' pokemon.id %}" class="btn btn-info"><i class="fa-solid fa-pencil"></i></a>
+              <a href="{% url 'pokedex:delete_pokemon' pokemon.id %}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
