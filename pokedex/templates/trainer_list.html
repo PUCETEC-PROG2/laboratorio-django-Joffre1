@@ -4,6 +4,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     </head>
+<<<<<<< HEAD
 
     <body>
         <div class="container">
@@ -79,6 +80,66 @@
             <br>
             <a href="{% url 'pokedex:index' %}" class="btn btn-danger ms-3">Regresar</a>
 
+=======
+    <body>
+        <div class="container">
+            <div class="bg-primary text-white p-4 text-center">
+                <h1>Mi Pokedex</h1>
+            </div>
+            
+            <br>    
+            <h3> Lista de Entrenadores </h3>
+            <br>
+            </div>
+            <div class="text-center my-4">
+                <img src="/static/entrenadores.jpg"
+                class="img-fluid rounded shadow"
+                alt="Portada de entrenadores">
+            </div>
+            <ul class="list-group">
+
+              <div class="container ps-3">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+
+        {% for trainer in trainers %}
+        <div class="col">
+            <div class="card shadow-lg h-100 text-center border-2"
+                 style="border-color:#cc0000; border-radius:15px;">
+
+                {% if trainer.pictureTrainer %}
+                    <img src="{{ trainer.pictureTrainer.url }}"
+                         class="card-img-top p-3"
+                         style="height:200px; object-fit:contain; background:#f7f7f7;">
+                {% else %}
+                    <img src="/static/default.png"
+                         class="card-img-top p-3"
+                         style="height:200px; object-fit:contain; background:#f7f7f7;">
+                {% endif %}
+
+                <div class="card-body">
+                    <h5 class="card-title fw-bold"
+                        style="color:primary;"> 
+                        {{ trainer.nameTrainer }} {{ trainer.lastname }}
+                    </h5>
+
+                    <a href="{% url 'pokedex:trainer' id=trainer.id %}"
+                       class="btn"
+                       style="background:#007BFF; color:white; border-radius:12px;"> 
+                        Ver detalles
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+            </ul>
+            
+            <br>
+            <a href="{% url 'pokedex:index' %}" class="btn btn-danger ms-3">Regresar</a>
+>>>>>>> 6d38372b93399851218f3760e1c80a474f610a62
         </div>
     </body>
 </html>

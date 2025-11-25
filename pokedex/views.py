@@ -6,6 +6,7 @@ from django.shortcuts import redirect, render
 from pokedex.forms import PokemonForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
+<<<<<<< HEAD
 from .forms import TrainerForm
 
 def index(request):
@@ -17,10 +18,26 @@ def pokemon(request, id):
     pokemon = Pokemon.objects.get(id=id)
     return render(request, 'display_pokemon.html', {'pokemon': pokemon})
 
+=======
+
+def index(request):
+    pokemons = Pokemon.objects.all()
+    template = loader.get_template('index.html')
+    return HttpResponse(template.render({'pokemons': pokemons}, request))
+
+def pokemon(request, id: int):
+    pokemon = Pokemon.objects.get(id=id)
+    template = loader.get_template('display_pokemon.html')
+    context = {
+        'pokemon': pokemon
+    }
+    return HttpResponse(template.render(context, request))
+>>>>>>> 6d38372b93399851218f3760e1c80a474f610a62
 
 
 def trainer_list(request):
     trainers = Trainer.objects.all()
+<<<<<<< HEAD
     return render(request, 'trainer_list.html', {'trainers': trainers})
 
 
@@ -28,6 +45,19 @@ def trainer_list(request):
 def trainer(request, id):
     trainer = Trainer.objects.get(id=id)
     return render(request, 'display_trainer.html', {'trainer': trainer})
+=======
+    template = loader.get_template('trainer_list.html')
+    return HttpResponse(template.render({'trainers': trainers}, request))
+
+
+def trainer(request, id: int):
+    trainer = Trainer.objects.get(id=id)
+    template = loader.get_template('display_trainer.html')
+    context = {
+        'trainer': trainer
+    }
+    return HttpResponse(template.render(context, request))
+>>>>>>> 6d38372b93399851218f3760e1c80a474f610a62
 
 @login_required
 def add_pokemon(request):
@@ -61,6 +91,7 @@ def delete_pokemon(request, pokemon_id):
     return redirect("pokedex:index")
 
 class CustomLoginView(LoginView):
+<<<<<<< HEAD
     template_name = 'login_form.html'
 
 @login_required   
@@ -94,3 +125,6 @@ def delete_trainer(request, trainer_id):
     trainer = Trainer.objects.get(id=trainer_id)
     trainer.delete()
     return redirect("pokedex:trainer_list")
+=======
+    template_name = 'login_form.html'
+>>>>>>> 6d38372b93399851218f3760e1c80a474f610a62
