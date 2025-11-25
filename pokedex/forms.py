@@ -1,10 +1,8 @@
 from django import forms
 from .models import Pokemon
-<<<<<<< HEAD
+
 from pokedex.models import Trainer
 
-=======
->>>>>>> 6d38372b93399851218f3760e1c80a474f610a62
 
 class PokemonForm(forms.ModelForm):
     class Meta:
@@ -25,7 +23,7 @@ class PokemonForm(forms.ModelForm):
             "weight" : forms.NumberInput (attrs={"class": "form-control"}),
             "picture" : forms.ClearableFileInput (attrs={"class": "form-control"}),
         }
-<<<<<<< HEAD
+
         
 class TrainerForm(forms.ModelForm):
     class Meta:
@@ -44,6 +42,4 @@ class TrainerForm(forms.ModelForm):
             "level": forms.NumberInput(attrs={"class": "form-control"}),
             "birthdate": forms.DateInput(attrs={"class": "form-control", "type": "date"}),
         }
-=======
-        
->>>>>>> 6d38372b93399851218f3760e1c80a474f610a62
+

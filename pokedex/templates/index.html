@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
   <p class="p-2"></p>
-<<<<<<< HEAD
 
   {% if user.is_authenticated %}
     <div class="text-right p-2">
@@ -11,7 +10,6 @@
           Añadir pokemon
         </a>
       </h3>
-      
     </div>
   {% endif %}
 
@@ -36,46 +34,9 @@
               <a href="{% url 'pokedex:edit_pokemon' pokemon.id %}" class="btn btn-info"><i class="fa-solid fa-pencil"></i></a>
               <a href="{% url 'pokedex:delete_pokemon' pokemon.id %}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
             {% endif %}
-=======
-  <h1>Pokemons</h1>
-  <br>
-  {% if user.is_authenticated %}
-  <h3><a href="{% url 'pokedex:add_pokemon' %}">Añadir pokemon</a></h3>
-  {% endif %}
-     <br>
-      <a href="{% url 'pokedex:trainer_list' %}"><h3>Entrenadores</h3></a>
-  <div class="row">
-    {% for pokemon in pokemons %}
-      <div class="col-sm-12 col-md-6 col-lg-4">
-        <br>
-        <div class="card" style="width: 100%;">
-          {% if pokemon.picture %}
-            <img class="card-img-top"  src="{{ pokemon.picture.url }}" alt="{{ pokemon.name }}" />
-          {% endif %}
-          <div class="card-body">
-            <h1 class="card-title"> {{pokemon.name | capfirst }}</h1>
-            <p class ="card-text"> Altura {{pokemon.height}} </p>
-            <p class ="card-text"> Peso {{pokemon.weight}} </p>
-            <a href ="{% url 'pokedex:pokemon' pokemon.id %}" class ="btn btn-info" >
-              <i class="fa-solid fa-eye"></i>
-            </a>
-            
-            {% if user.is_authenticated %}
-            <a href ="{% url 'pokedex:edit_pokemon' pokemon.id %}" class ="btn btn-info" >
-              <i class="fa-solid fa-pencil"></i>
-            </a> 
-            <a href ="{% url 'pokedex:delete_pokemon' pokemon.id %}" class ="btn btn-danger" >
-              <i class="fa-solid fa-trash"></i>
-            </a>
-            {% endif %} 
->>>>>>> 6d38372b93399851218f3760e1c80a474f610a62
           </div>
         </div>
       </div>
     {% endfor %}
   </div>
-<<<<<<< HEAD
-=======
-  
->>>>>>> 6d38372b93399851218f3760e1c80a474f610a62
 {% endblock %}
