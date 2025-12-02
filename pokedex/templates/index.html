@@ -5,10 +5,11 @@
   {% if user.is_authenticated %}
     <div class="text-right p-2">
       <h3>
-        <a class="btn btn-success mb-4 ms-2" href="{% url 'pokedex:add_pokemon' %}">
-          <i class="fa-solid fa-plus"></i>
-          Añadir pokemon
-        </a>
+       <a class="btn btn-success mb-4 ms-2" href="{% url 'pokedex:add_pokemon' %}">
+      <i class="fa-solid fa-plus me-1"></i>
+      Añadir Pokémon
+    </a>
+
       </h3>
     </div>
   {% endif %}
