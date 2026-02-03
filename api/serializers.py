@@ -35,12 +35,11 @@ class TrainerSerializer(serializers.ModelSerializer):
     def validate_pictureTrainer(self, value):
         if value:
             try:
-                # Separamos el encabezado del contenido base64
                 format, imgstr = value.split(';base64,')
                 ext = format.split('/')[-1]
                 return ContentFile(
                     base64.b64decode(imgstr),
-                    name=f'trainer_{ext}' # Nombre temporal del archivo
+                    name=f'trainer_{ext}' 
                 )
             except Exception:
                 raise serializers.ValidationError("La imagen no es una cadena Base64 válida.")
