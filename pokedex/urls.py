@@ -17,6 +17,7 @@ urlpatterns = [
     path("add_trainer/", views.add_trainer, name="add_trainer"),
     path("edit_trainer/<int:trainer_id>/", views.edit_trainer, name="edit_trainer"),
     path("delete_trainer/<int:trainer_id>/", views.delete_trainer, name="delete_trainer"),
+    path("sync-mongodb/",views.sync_mongodb,name="sync_mongodb",),
 ]
 
 

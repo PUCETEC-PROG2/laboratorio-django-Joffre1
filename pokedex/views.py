@@ -6,7 +6,8 @@ from django.shortcuts import redirect, render
 from pokedex.forms import PokemonForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
-
+from django.contrib import messages
+from services.sync_service import sync_postgres_to_mongo
 from .forms import TrainerForm
 
 def index(request):
@@ -125,3 +126,21 @@ def delete_trainer(request, trainer_id):
     return redirect("pokedex:trainer_list")
 
     template_name = 'login_form.html'
+
+@login_required
+def sync_mongodb(request):
+    try:
+        cantidad = sync_postgres_to_mongo()
+
+        messages.success(
+            request,
+            f"Se sincronizaron {cantidad} Pokémon correctamente con MongoDB."
+        )
+
+    except Exception as e:
+        messages.error(
+            request,
+            f"Error durante la sincronización: {e}"
+        )
+
+    return redirect("pokedex:index")

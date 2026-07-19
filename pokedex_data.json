@@ -1,0 +1,90 @@
+[
+{
+    "model": "pokedex.pokemon",
+    "pk": 1,
+    "fields": {
+        "name": "Bulbasur",
+        "type": "Agua",
+        "weight": 50,
+        "height": 100,
+        "picture": "pokemon_pictures/temp_nQZT8Za.png"
+    }
+},
+{
+    "model": "pokedex.pokemon",
+    "pk": 2,
+    "fields": {
+        "name": "Raichu",
+        "type": "Electricidad",
+        "weight": 20,
+        "height": 60,
+        "picture": "pokemon_pictures/026.png"
+    }
+},
+{
+    "model": "pokedex.pokemon",
+    "pk": 13,
+    "fields": {
+        "name": "Sandshrew",
+        "type": "Tierra",
+        "weight": 22,
+        "height": 122,
+        "picture": "pokemon_pictures/temp_EE72E3w.webp"
+    }
+},
+{
+    "model": "pokedex.pokemon",
+    "pk": 18,
+    "fields": {
+        "name": "Steelix",
+        "type": "Piedra",
+        "weight": 50,
+        "height": 59,
+        "picture": "pokemon_pictures/temp_ZgQb9xq.png"
+    }
+},
+{
+    "model": "pokedex.pokemon",
+    "pk": 19,
+    "fields": {
+        "name": "Raichu",
+        "type": "roca",
+        "weight": 50,
+        "height": 100,
+        "picture": "pokemon_pictures/temp_fENviVz.jpeg"
+    }
+},
+{
+    "model": "pokedex.trainer",
+    "pk": 1,
+    "fields": {
+        "nameTrainer": "Mateo",
+        "lastname": "Gßlvez",
+        "level": 1,
+        "birthdate": "2003-12-07",
+        "pictureTrainer": "trainer_picture/89979b00280965cd37361bbecd10079c.jpg"
+    }
+},
+{
+    "model": "pokedex.trainer",
+    "pk": 2,
+    "fields": {
+        "nameTrainer": "Danny",
+        "lastname": "Caraguay",
+        "level": 2,
+        "birthdate": "2015-04-21",
+        "pictureTrainer": "trainer_picture/mateo_nK71R8d.jpg"
+    }
+},
+{
+    "model": "pokedex.trainer",
+    "pk": 4,
+    "fields": {
+        "nameTrainer": "Danny",
+        "lastname": "Luna",
+        "level": 3,
+        "birthdate": "2005-01-21",
+        "pictureTrainer": "trainer_picture/trainer_png_RJPexfG"
+    }
+}
+]

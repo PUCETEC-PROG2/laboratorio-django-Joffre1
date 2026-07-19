@@ -4,17 +4,32 @@
 
   {% if user.is_authenticated %}
     <div class="text-right p-2">
-      <h3>
-       <a class="btn btn-success mb-4 ms-2" href="{% url 'pokedex:add_pokemon' %}">
-      <i class="fa-solid fa-plus me-1"></i>
-      Añadir Pokémon
-    </a>
+    <h3>
 
-      </h3>
-    </div>
+        <a class="btn btn-success mb-4 ms-2"
+           href="{% url 'pokedex:add_pokemon' %}">
+            <i class="fa-solid fa-plus me-1"></i>
+            Añadir Pokémon
+        </a>
+
+        <a class="btn btn-primary mb-4 ms-2"
+           href="{% url 'pokedex:sync_mongodb' %}">
+            <i class="fa-solid fa-database me-1"></i>
+            Sincronizar MongoDB
+        </a>
+
+    </h3>
+</div>
   {% endif %}
 
   <h1>Pokemons</h1>
+  {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
   <br />
 
   <div class="row">
