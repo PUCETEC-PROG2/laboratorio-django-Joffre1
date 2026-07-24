@@ -3,24 +3,88 @@
   <p class="p-2"></p>
 
   {% if user.is_authenticated %}
-    <div class="text-right p-2">
-    <h3>
+<div class="text-right p-2">
 
-        <a class="btn btn-success mb-4 ms-2"
-           href="{% url 'pokedex:add_pokemon' %}">
-            <i class="fa-solid fa-plus me-1"></i>
-            Añadir Pokémon
-        </a>
+    <a class="btn btn-success mb-4 ms-2"
+       href="{% url 'pokedex:add_pokemon' %}">
 
-        <a class="btn btn-primary mb-4 ms-2"
-           href="{% url 'pokedex:sync_mongodb' %}">
-            <i class="fa-solid fa-database me-1"></i>
-            Sincronizar MongoDB
-        </a>
+        <i class="fa-solid fa-plus me-1"></i>
 
-    </h3>
+        Añadir Pokémon
+
+    </a>
+
+    <div class="dropdown d-inline">
+
+        <button
+            class="btn btn-primary mb-4 ms-2 dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown">
+
+            <i class="fa-solid fa-arrows-rotate me-1"></i>
+
+            Sincronizar BD
+
+        </button>
+
+        <ul class="dropdown-menu">
+
+            <li>
+
+                <a class="dropdown-item"
+                   href="{% url 'pokedex:sync_postgres' %}">
+
+                    🐘 PostgreSQL → MongoDB
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a class="dropdown-item"
+                   href="{% url 'pokedex:sync_mongo' %}">
+
+                    🍃 MongoDB → PostgreSQL
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <a href="{% url 'pokedex:sync_logs' %}"
+       class="btn btn-info mb-4 ms-2">
+
+        <i class="fa-solid fa-clock-rotate-left me-1"></i>
+
+        Historial
+
+    </a>
+
+    <a href="{% url 'pokedex:mongo_index' %}"
+       class="btn btn-warning mb-4 ms-2">
+
+        <i class="fa-solid fa-right-left me-1"></i>
+
+        Cambiar a MongoDB
+
+    </a>
+
 </div>
-  {% endif %}
+{% endif %}
+
+<div class="alert alert-primary">
+
+    <i class="fa-solid fa-database me-2"></i>
+
+    <strong>Base de datos principal:</strong>
+
+    🐘 PostgreSQL
+
+</div>
 
   <h1>Pokemons</h1>
   {% if messages %}
@@ -47,8 +111,14 @@
             <a href="{% url 'pokedex:pokemon' pokemon.id %}" class="btn btn-info"><i class="fa-solid fa-eye"></i></a>
 
             {% if user.is_authenticated %}
-              <a href="{% url 'pokedex:edit_pokemon' pokemon.id %}" class="btn btn-info"><i class="fa-solid fa-pencil"></i></a>
-              <a href="{% url 'pokedex:delete_pokemon' pokemon.id %}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+              <a href="{% url 'pokedex:edit_pokemon' pokemon.id %}" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+              <a href="{% url 'pokedex:delete_pokemon' pokemon.id %}"
+   class="btn btn-danger"
+   onclick="return confirm('¿Está seguro de eliminar este Pokémon de PostgreSQL?');">
+
+    <i class="fa-solid fa-trash"></i>
+
+</a>
             {% endif %}
           </div>
         </div>

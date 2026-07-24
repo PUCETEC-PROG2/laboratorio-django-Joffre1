@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p class="p-2"></p>
+
+<div class="text-right p-2">
+
+    <a class="btn btn-success mb-4 ms-2"
+       href="{% url 'pokedex:add_mongo_pokemon' %}">
+
+        <i class="fa-solid fa-plus me-1"></i>
+
+        Añadir Pokémon (MongoDB)
+
+    </a>
+
+    <div class="dropdown d-inline">
+
+        <button
+            class="btn btn-primary mb-4 ms-2 dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown">
+
+            <i class="fa-solid fa-arrows-rotate me-1"></i>
+
+            Sincronizar BD
+
+        </button>
+
+        <ul class="dropdown-menu">
+
+            <li>
+
+                <a class="dropdown-item"
+                   href="{% url 'pokedex:sync_postgres' %}">
+
+                    🐘 PostgreSQL → MongoDB
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a class="dropdown-item"
+                   href="{% url 'pokedex:sync_mongo' %}">
+
+                    🍃 MongoDB → PostgreSQL
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <a href="{% url 'pokedex:sync_logs' %}"
+       class="btn btn-info mb-4 ms-2">
+
+        <i class="fa-solid fa-clock-rotate-left me-1"></i>
+
+        Historial
+
+    </a>
+
+    <a href="{% url 'pokedex:index' %}"
+       class="btn btn-warning mb-4 ms-2">
+
+        <i class="fa-solid fa-right-left me-1"></i>
+
+        Cambiar a PostgreSQL
+
+    </a>
+
+</div>
+
+<div class="alert alert-success">
+
+    <i class="fa-solid fa-leaf me-2"></i>
+
+    <strong>Base de datos principal:</strong>
+
+    🍃 MongoDB
+
+</div>
+
+<h1>MongoDB</h1>
+
+<br>
+
+<div class="row">
+
+    {% for pokemon in pokemons %}
+
+    <div class="col-sm-12 col-md-6 col-lg-4">
+
+        <br>
+
+        <div class="card" style="width:100%;">
+
+            {% if pokemon.picture %}
+
+<img
+    class="card-img-top"
+    src="/media/{{ pokemon.picture }}"
+    alt="{{ pokemon.name }}">
+
+{% endif %}
+
+            <div class="card-body">
+
+                <h3 class="card-title">
+
+                    {{ pokemon.name }}
+
+                </h3>
+
+                <p class="card-text">
+
+                    Altura {{ pokemon.height }}
+
+                </p>
+
+                <p class="card-text">
+
+                    Peso {{ pokemon.weight }}
+
+                </p>
+
+                {% if pokemon.favorite %}
+
+                    <p class="text-warning">
+
+                        ⭐ Favorito
+
+                    </p>
+
+                {% endif %}
+
+                <a href="{% url 'pokedex:mongo_pokemon' pokemon.pokemonId %}"
+                   class="btn btn-info">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                </a>
+
+                <a href="{% url 'pokedex:edit_mongo_pokemon' pokemon.pokemonId %}"
+                   class="btn btn-primary">
+
+                    <i class="fa-solid fa-pen"></i>
+
+                </a>
+
+                <a href="{% url 'pokedex:delete_mongo_pokemon' pokemon.pokemonId %}"
+   class="btn btn-danger"
+   onclick="return confirm('¿Está seguro de eliminar este Pokémon de MongoDB?');">
+
+    <i class="fa-solid fa-trash"></i>
+
+</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<br>
+
+{% endblock %}

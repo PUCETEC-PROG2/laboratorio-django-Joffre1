@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>
+    Has elegido el Pokémon en <strong>MongoDB</strong>:
+    <strong>{{ pokemon.name }}</strong>
+
+    {% if pokemon.favorite %}
+        ⭐
+    {% endif %}
+</p>
+
+{% if pokemon.picture %}
+<div class="text-center">
+
+    <img
+        class="card-img-top mx-auto d-block"
+        src="/media/{{ pokemon.picture }}"
+        style="max-width:400px;height:auto;"
+        alt="{{ pokemon.name }}">
+
+</div>
+{% endif %}
+
+<br>
+
+<h3>Características</h3>
+
+<ul>
+
+    <li><strong>Tipo:</strong> {{ pokemon.type }}</li>
+
+    <li><strong>Peso:</strong> {{ pokemon.weight }}</li>
+
+    <li><strong>Altura:</strong> {{ pokemon.height }}</li>
+
+</ul>
+
+<hr>
+
+<h3>Información exclusiva de MongoDB</h3>
+
+<p>
+
+    <strong>Favorito:</strong>
+
+    {% if pokemon.favorite %}
+
+        ⭐ Sí
+
+    {% else %}
+
+        ❌ No
+
+    {% endif %}
+
+</p>
+
+<p>
+
+    <strong>Comentario:</strong>
+
+    {{ pokemon.comment }}
+
+</p>
+
+<p>
+
+    <strong>Etiquetas:</strong>
+
+    {% for tag in pokemon.tags %}
+
+        <span class="badge bg-primary">{{ tag }}</span>
+
+    {% empty %}
+
+        Sin etiquetas
+
+    {% endfor %}
+
+</p>
+
+<p>
+
+    <strong>Veces visto:</strong>
+
+    {{ pokemon.timesViewed }}
+
+</p>
+
+<p>
+
+    <strong>Última visita:</strong>
+
+    {{ pokemon.lastViewed }}
+
+</p>
+
+<hr>
+
+<a
+    href="{% url 'pokedex:mongo_index' %}"
+    class="btn btn-danger">
+
+    Regresar
+
+</a>
+
+{% endblock %}

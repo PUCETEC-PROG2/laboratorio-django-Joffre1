@@ -7,7 +7,12 @@ class Pokemon(models.Model):
     weight = models.IntegerField(null=False)
     height = models.IntegerField(null=False)
     picture = models.ImageField(upload_to="pokemon_pictures/", null=True, blank=True)
-    
+
+    # Datos sincronizados desde MongoDB
+    favorite = models.BooleanField(default=False)
+    comment = models.TextField(blank=True, default="")
+    tags = models.TextField(blank=True, default="")
+
     def __str__(self):
         return self.name
     

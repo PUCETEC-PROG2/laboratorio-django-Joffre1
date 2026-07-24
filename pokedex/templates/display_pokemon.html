@@ -1,18 +1,122 @@
 {% extends "base.html" %}
+
 {% block content %}
-        <p>Has elegido el pokemon: <strong>{{ pokemon.name | capfirst }}</strong></p>
-            {% if pokemon.picture %}
-            <div class="text-center"></div>
-                <img class="card-img-top mx-auto d-block" src="{{ pokemon.picture.url }}" alt="{{ pokemon.name }}"
-+                   style="max-width:400px; height:auto;" />
-          {% endif %}
-            <h3>Características</h3>
-            <ul>
-                <li>Tipo: {{pokemon.type}}</li>
-                <li>Peso: {{pokemon.weight}}</li>
-                <li>Altura: {{pokemon.height}}</li>
-            </ul>
-            <br>
-            <a href="{% url 'pokedex:index' %}" class="btn btn-danger">Regresar</a>
+
+<p class="mb-3">
+    Has elegido el Pokémon:
+    <strong>
+        {{ pokemon.name|capfirst }}
+        {% if mongo_data.favorite %}
+<span class="badge bg-warning text-dark">
+    ⭐ Favorito
+</span>
+{% endif %}
+    </strong>
+</p>
+
+{% if pokemon.picture %}
+<div class="text-center mb-4">
+    <img
+        class="card-img-top mx-auto d-block"
+        src="{{ pokemon.picture.url }}"
+        alt="{{ pokemon.name }}"
+        style="max-width:400px; height:auto;">
+</div>
+{% endif %}
+
+<h3>Características</h3>
+
+<ul>
+    <li><strong>Tipo:</strong> {{ pokemon.type }}</li>
+    <li><strong>Peso:</strong> {{ pokemon.weight }}</li>
+    <li><strong>Altura:</strong> {{ pokemon.height }}</li>
+</ul>
+
+<hr>
+
+<h3>Información almacenada en MongoDB</h3>
+
+<p>
+    <strong>Veces visto:</strong>
+    {{ mongo_data.timesViewed }}
+</p>
+
+<p>
+    <strong>Última visita:</strong>
+    {{ mongo_data.lastViewed }}
+</p>
+
+<form method="POST" action="{% url 'pokedex:save_mongo_data' pokemon.id %}">
+
+    {% csrf_token %}
+
+    <div class="form-check mb-3">
+
+        <input
+            class="form-check-input"
+            type="checkbox"
+            id="favorite"
+            name="favorite"
+            {% if mongo_data.favorite %}checked{% endif %}
+        >
+
+        <label class="form-check-label" for="favorite">
+            Pokémon favorito
+        </label>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Comentario
+        </label>
+
+        <textarea
+            class="form-control"
+            rows="4"
+            name="comment"
+            placeholder="Escribe un comentario sobre este Pokémon...">{{ mongo_data.comment }}</textarea>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Etiquetas
+        </label>
+
+        <input
+            class="form-control"
+            type="text"
+            name="tags"
+            placeholder="Ejemplo: Inicial, Kanto, Planta"
+            value="{% if mongo_data.tags %}{{ mongo_data.tags|join:', ' }}{% endif %}">
+
+        <small class="text-muted">
+            Separe las etiquetas utilizando comas.
+        </small>
+
+    </div>
+
+    <button class="btn btn-success">
+        Guardar información en MongoDB
+    </button>
+
+    <a
+    href="{% url 'pokedex:clear_mongo_data' pokemon.id %}"
+    class="btn btn-danger ms-2">
+
+    Limpiar información de MongoDB
+
+</a>
+
+</form>
+
+<hr>
+
+<a href="{% url 'pokedex:index' %}" class="btn btn-danger">
+    Regresar
+</a>
+
 {% endblock content %}
-                   
