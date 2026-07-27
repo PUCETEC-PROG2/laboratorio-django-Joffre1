@@ -1,0 +1,95 @@
+{% with tipo=pokemon.type|lower %}
+
+{% if "fuego" in tipo %}
+
+<span class="badge bg-danger badge-type">
+🔥 {{ pokemon.type }}
+</span>
+
+{% elif "agua" in tipo %}
+
+<span class="badge bg-primary badge-type">
+💧 {{ pokemon.type }}
+</span>
+
+{% elif "planta" in tipo %}
+
+<span class="badge bg-success badge-type">
+🌿 {{ pokemon.type }}
+</span>
+
+{% elif "elect" in tipo %}
+
+<span class="badge bg-warning text-dark badge-type">
+⚡ {{ pokemon.type }}
+</span>
+
+{% elif "tierra" in tipo %}
+
+<span class="badge badge-type" style="background:#8B5A2B;color:white;">
+🌍 {{ pokemon.type }}
+</span>
+
+{% elif "piedra" in tipo or "roca" in tipo %}
+
+<span class="badge badge-type" style="background:#6E6E6E;color:white;">
+🪨 {{ pokemon.type }}
+</span>
+
+{% elif "hada" in tipo %}
+
+<span class="badge badge-type" style="background:#FF69B4;color:white;">
+🧚 {{ pokemon.type }}
+</span>
+
+{% elif "veneno" in tipo %}
+
+<span class="badge badge-type" style="background:#8E44AD;color:white;">
+☠️ {{ pokemon.type }}
+</span>
+
+{% elif "hielo" in tipo %}
+
+<span class="badge bg-info badge-type">
+❄️ {{ pokemon.type }}
+</span>
+
+{% elif "fantasma" in tipo %}
+
+<span class="badge badge-type" style="background:#5B2C6F;color:white;">
+👻 {{ pokemon.type }}
+</span>
+
+{% elif "dragon" in tipo or "dragón" in tipo %}
+
+<span class="badge badge-type" style="background:#1F3A93;color:white;">
+🐉 {{ pokemon.type }}
+</span>
+
+{% elif "normal" in tipo %}
+
+<span class="badge bg-secondary badge-type">
+⚪ {{ pokemon.type }}
+</span>
+
+{% elif "lucha" in tipo %}
+
+<span class="badge badge-type" style="background:#B22222;color:white;">
+🥊 {{ pokemon.type }}
+</span>
+
+{% elif "psiquico" in tipo or "psíquico" in tipo %}
+
+<span class="badge badge-type" style="background:#E91E63;color:white;">
+🔮 {{ pokemon.type }}
+</span>
+
+{% else %}
+
+<span class="badge bg-dark badge-type">
+🏷️ {{ pokemon.type }}
+</span>
+
+{% endif %}
+
+{% endwith %}

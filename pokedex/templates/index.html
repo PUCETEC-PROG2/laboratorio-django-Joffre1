@@ -3,126 +3,189 @@
   <p class="p-2"></p>
 
   {% if user.is_authenticated %}
-<div class="text-right p-2">
+    <div class="text-right p-2">
+      <a
+class="btn btn-success rounded-pill shadow-sm mb-4 ms-2 px-4"
+href="{% url 'pokedex:add_pokemon' %}">
 
-    <a class="btn btn-success mb-4 ms-2"
-       href="{% url 'pokedex:add_pokemon' %}">
+<i class="fa-solid fa-plus me-2"></i>
 
-        <i class="fa-solid fa-plus me-1"></i>
+Añadir Pokémon
 
-        Añadir Pokémon
+</a>
 
-    </a>
-
-    <div class="dropdown d-inline">
-
+      <div class="dropdown d-inline">
         <button
-            class="btn btn-primary mb-4 ms-2 dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown">
+class="btn btn-primary rounded-pill shadow-sm mb-4 ms-2 px-4 dropdown-toggle"
+type="button"
+data-bs-toggle="dropdown">
 
-            <i class="fa-solid fa-arrows-rotate me-1"></i>
+<i class="fa-solid fa-arrows-rotate me-2"></i>
 
-            Sincronizar BD
+Sincronizar
 
-        </button>
+</button>
 
         <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="{% url 'pokedex:sync_postgres' %}?next=index">🐘 PostgreSQL → MongoDB</a>
+          </li>
 
-            <li>
-
-                <a class="dropdown-item"
-                   href="{% url 'pokedex:sync_postgres' %}">
-
-                    🐘 PostgreSQL → MongoDB
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a class="dropdown-item"
-                   href="{% url 'pokedex:sync_mongo' %}">
-
-                    🍃 MongoDB → PostgreSQL
-
-                </a>
-
-            </li>
-
+          <li>
+            <a class="dropdown-item" href="{% url 'pokedex:sync_mongo' %}?next=index">🍃 MongoDB → PostgreSQL</a>
+          </li>
         </ul>
+      </div>
+
+      <a
+href="{% url 'pokedex:sync_logs' %}"
+class="btn btn-info rounded-pill shadow-sm mb-4 ms-2 px-4">
+
+<i class="fa-solid fa-clock-rotate-left me-2"></i>
+
+Historial
+
+</a>
+
+      <a
+href="{% url 'pokedex:mongo_index' %}"
+class="btn btn-warning rounded-pill shadow-sm mb-4 ms-2 px-4">
+
+<i class="fa-solid fa-right-left me-2"></i>
+
+MongoDB
+
+</a>
+    </div>
+  {% endif %}
+
+  <div class="database-card bg-primary">
+
+<h3>
+
+🐘 PostgreSQL
+
+</h3>
+
+<p class="mb-0">
+
+Base de datos principal activa
+
+</p>
+
+</div>
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+
+        <h1 class="fw-bold text-danger mb-0">
+
+            <i class="fa-solid fa-dragon me-2"></i>
+
+            Pokémon
+
+        </h1>
+
+        <small class="text-muted">
+
+            Explora y administra tu colección de Pokémon den PostgreSQL
+
+        </small>
 
     </div>
 
-    <a href="{% url 'pokedex:sync_logs' %}"
-       class="btn btn-info mb-4 ms-2">
-
-        <i class="fa-solid fa-clock-rotate-left me-1"></i>
-
-        Historial
-
-    </a>
-
-    <a href="{% url 'pokedex:mongo_index' %}"
-       class="btn btn-warning mb-4 ms-2">
-
-        <i class="fa-solid fa-right-left me-1"></i>
-
-        Cambiar a MongoDB
-
-    </a>
-
 </div>
-{% endif %}
-
-<div class="alert alert-primary">
-
-    <i class="fa-solid fa-database me-2"></i>
-
-    <strong>Base de datos principal:</strong>
-
-    🐘 PostgreSQL
-
-</div>
-
-  <h1>Pokemons</h1>
   {% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-            {{ message }}
-        </div>
-    {% endfor %}
-{% endif %}
+    
+  {% endif %}
   <br />
 
   <div class="row">
-    {% for pokemon in pokemons %}
-      <div class="col-sm-12 col-md-6 col-lg-4">
-        <br />
-        <div class="card" style="width: 100%;">
-          {% if pokemon.picture %}
-            <img class="card-img-top" src="{{ pokemon.picture.url }}" alt="{{ pokemon.name }}" />
-          {% endif %}
-          <div class="card-body">
-            <h1 class="card-title">{{ pokemon.name|capfirst }}</h1>
-            <p class="card-text">Altura {{ pokemon.height }}</p>
-            <p class="card-text">Peso {{ pokemon.weight }}</p>
-            <a href="{% url 'pokedex:pokemon' pokemon.id %}" class="btn btn-info"><i class="fa-solid fa-eye"></i></a>
 
-            {% if user.is_authenticated %}
-              <a href="{% url 'pokedex:edit_pokemon' pokemon.id %}" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
-              <a href="{% url 'pokedex:delete_pokemon' pokemon.id %}"
-   class="btn btn-danger"
-   onclick="return confirm('¿Está seguro de eliminar este Pokémon de PostgreSQL?');">
+{% for pokemon in pokemons %}
 
-    <i class="fa-solid fa-trash"></i>
+<div class="col-md-4 mb-4">
+
+<div class="card pokemon-card">
+
+{% if pokemon.picture %}
+
+<img
+src="{{ pokemon.picture.url }}"
+class="pokemon-img">
+
+{% endif %}
+
+<div class="card-body text-center">
+
+<h3 class="fw-bold">
+
+{{ pokemon.name }}
+
+</h3>
+
+{% with tipo=pokemon.type|lower %}
+
+{% include "type_badge.html" %}
+
+{% endwith %}
+
+<hr>
+
+<p>
+
+⚖️ <b>{{ pokemon.weight }}</b> kg
+
+</p>
+
+<p>
+
+📏 <b>{{ pokemon.height }}</b> cm
+
+</p>
+
+</div>
+
+<div class="card-footer text-center">
+
+<a href="{% url 'pokedex:pokemon' pokemon.id %}"
+
+class="btn btn-info action-btn">
+
+<i class="fa-solid fa-eye"></i>
 
 </a>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
+
+{% if user.is_authenticated %}
+
+<a href="{% url 'pokedex:edit_pokemon' pokemon.id %}"
+
+class="btn btn-primary action-btn">
+
+<i class="fa-solid fa-pen"></i>
+
+</a>
+
+<a href="{% url 'pokedex:delete_pokemon' pokemon.id %}"
+
+class="btn btn-danger action-btn"
+
+onclick="return confirm('¿Eliminar este Pokémon?')">
+
+<i class="fa-solid fa-trash"></i>
+
+</a>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
 {% endblock %}

@@ -17,12 +17,46 @@ class PokemonForm(forms.ModelForm):
         }     
         
         widgets = {
-            "name" : forms.TextInput(attrs={"class": "form-control"}),
-            "type" : forms.TextInput (attrs={"class": "form-control"}),
-            "height" : forms.NumberInput (attrs={"class": "form-control"}),
-            "weight" : forms.NumberInput (attrs={"class": "form-control"}),
-            "picture" : forms.ClearableFileInput (attrs={"class": "form-control"}),
+
+    "name": forms.TextInput(
+        attrs={"class": "form-control"}
+    ),
+
+    "type": forms.TextInput(
+        attrs={"class": "form-control"}
+    ),
+
+    "height": forms.NumberInput(
+        attrs={"class": "form-control"}
+    ),
+
+    "weight": forms.NumberInput(
+        attrs={"class": "form-control"}
+    ),
+
+    "picture": forms.ClearableFileInput(
+        attrs={"class": "form-control"}
+    ),
+
+    "favorite": forms.CheckboxInput(
+        attrs={"class": "form-check-input"}
+    ),
+
+    "comment": forms.Textarea(
+        attrs={
+            "class": "form-control",
+            "rows": 4
         }
+    ),
+
+    "tags": forms.TextInput(
+        attrs={
+            "class": "form-control",
+            "placeholder": "Ej: Eléctrico, Inicial, Raro"
+        }
+    )
+
+}
 
         
 class TrainerForm(forms.ModelForm):
@@ -30,11 +64,15 @@ class TrainerForm(forms.ModelForm):
         model = Trainer
         fields = "__all__"
         labels = {
-        "nameTrainer": "Nombre", 
-        "lastname": "Apellido", 
-        "level": "Nivel", 
-        "birthdate": "Fecha de cumpleaños", 
-        "pictureTrainer": "Imagen"}
+    "name": "Nombre",
+    "type": "Tipo",
+    "weight": "Peso",
+    "height": "Altura",
+    "picture": "Imagen",
+    "favorite": "Pokémon favorito",
+    "comment": "Comentario",
+    "tags": "Etiquetas",
+}
 
         widgets = {
             "nameTrainer": forms.TextInput(attrs={"class": "form-control"}),

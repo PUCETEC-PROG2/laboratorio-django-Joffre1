@@ -14,9 +14,16 @@ import os
 
 
 def index(request):
-    pokemons = Pokemon.objects.all()
-    template = loader.get_template('index.html')
-    return HttpResponse(template.render({'pokemons': pokemons}, request))
+
+    pokemons = Pokemon.objects.all().order_by("id")
+
+    return render(
+        request,
+        "index.html",
+        {
+            "pokemons": pokemons
+        }
+    )
 
 def pokemon(request, id: int):
 
@@ -133,6 +140,11 @@ def sync_postgres(request):
             f"Error: {e}"
         )
 
+    siguiente = request.GET.get("next")
+
+    if siguiente == "mongo":
+        return redirect("pokedex:mongo_index")
+
     return redirect("pokedex:index")
 
 
@@ -155,7 +167,12 @@ def sync_mongo(request):
             f"Error: {e}"
         )
 
-    return redirect("pokedex:mongo_index")
+    siguiente = request.GET.get("next")
+
+    if siguiente == "mongo":
+        return redirect("pokedex:mongo_index")
+
+    return redirect("pokedex:index")
 
 @login_required
 def save_mongo_data(request, id):

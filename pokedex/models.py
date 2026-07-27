@@ -12,6 +12,9 @@ class Pokemon(models.Model):
     favorite = models.BooleanField(default=False)
     comment = models.TextField(blank=True, default="")
     tags = models.TextField(blank=True, default="")
+    
+    class Meta:
+        ordering = ["id"]
 
     def __str__(self):
         return self.name

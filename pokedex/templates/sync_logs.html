@@ -2,96 +2,192 @@
 
 {% block content %}
 
-<h2>Historial de sincronizaciones</h2>
+<div class="d-flex justify-content-between align-items-center mb-4">
 
-<br>
+    <h2 class="fw-bold">
 
-<table class="table table-bordered table-striped">
+        <i class="fa-solid fa-clock-rotate-left text-primary me-2"></i>
 
-    <thead>
+        Historial de sincronizaciones
 
-        <tr>
+    </h2>
 
-            <th>Fecha</th>
+    <a href="{% url 'pokedex:index' %}" class="btn btn-outline-danger rounded-pill">
 
-            <th>Origen</th>
+        <i class="fa-solid fa-arrow-left me-1"></i>
 
-            <th>Destino</th>
+        Regresar
 
-            <th>Registros</th>
+    </a>
 
-            <th>Estado</th>
-            
+</div>
 
-        </tr>
-        
+<div class="card shadow border-0 rounded-4">
 
-    </thead>
+    <div class="card-body">
 
-    <tbody>
+        <div class="table-responsive">
 
-        {% for log in logs %}
+            <table class="table table-hover align-middle mb-0">
 
-        <tr>
+                <thead class="table-dark">
 
-            <td>{{ log.date }}</td>
+                    <tr>
 
-            <td>{{ log.origin }}</td>
+                        <th><i class="fa-solid fa-calendar-days me-1"></i> Fecha</th>
 
-            <td>{{ log.destination }}</td>
+                        <th><i class="fa-solid fa-database me-1"></i> Origen</th>
 
-            <td>{{ log.records }}</td>
+                        <th><i class="fa-solid fa-right-left me-1"></i> Destino</th>
 
-            <td>
+                        <th class="text-center"><i class="fa-solid fa-boxes-stacked me-1"></i> Registros</th>
 
-{% if log.status == "SUCCESS" %}
+                        <th class="text-center"><i class="fa-solid fa-circle-info me-1"></i> Estado</th>
 
-    <span class="text-success">
+                        <th class="text-center"><i class="fa-solid fa-triangle-exclamation me-1"></i> Errores</th>
 
-        <i class="fa-solid fa-circle-check"></i>
+                        <th class="text-center"><i class="fa-solid fa-screwdriver-wrench me-1"></i> Resueltos</th>
 
-        Éxito
+                    </tr>
 
-    </span>
+                </thead>
 
-{% else %}
+                <tbody>
 
-    <span class="text-danger">
+                    {% for log in logs %}
 
-        <i class="fa-solid fa-circle-xmark"></i>
+                    <tr>
 
-        Error
+                        <td>{{ log.date }}</td>
 
-    </span>
+                        <td>
 
-{% endif %}
+                            <span class="badge bg-primary rounded-pill">
 
-</td>
+                                {{ log.origin }}
 
-        </tr>
+                            </span>
 
-        {% empty %}
+                        </td>
 
-        <tr>
+                        <td>
 
-            <td colspan="5">
+                            <span class="badge bg-success rounded-pill">
 
-                No existen sincronizaciones registradas.
+                                {{ log.destination }}
 
-            </td>
+                            </span>
 
-        </tr>
+                        </td>
 
-        {% endfor %}
+                        <td class="text-center">
 
-    </tbody>
+                            <span class="badge bg-secondary rounded-pill">
 
-</table>
+                                {{ log.records }}
 
-<a href="{% url 'pokedex:index' %}" class="btn btn-danger">
+                            </span>
 
-    Regresar
+                        </td>
 
-</a>
+                        <td class="text-center">
+
+                            {% if log.status == "SUCCESS" %}
+
+                                <span class="badge bg-success rounded-pill px-3">
+
+                                    <i class="fa-solid fa-circle-check me-1"></i>
+
+                                    Éxito
+
+                                </span>
+
+                            {% else %}
+
+                                <span class="badge bg-danger rounded-pill px-3">
+
+                                    <i class="fa-solid fa-circle-xmark me-1"></i>
+
+                                    Error
+
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                        <td class="text-center">
+
+                            {% if log.errorsFound == 0 %}
+
+                                <span class="badge bg-success rounded-pill">
+
+                                    0
+
+                                </span>
+
+                            {% else %}
+
+                                <span class="badge bg-danger rounded-pill">
+
+                                    {{ log.errorsFound }}
+
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                        <td class="text-center">
+
+                            {% if log.errorsSolved > 0 %}
+
+                                <span class="badge bg-info text-dark rounded-pill">
+
+                                    {{ log.errorsSolved }}
+
+                                </span>
+
+                            {% else %}
+
+                                <span class="badge bg-light text-dark rounded-pill">
+
+                                    0
+
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+
+                    {% empty %}
+
+                    <tr>
+
+                        <td colspan="7" class="text-center py-5">
+
+                            <i class="fa-solid fa-folder-open fa-3x text-secondary mb-3"></i>
+
+                            <br>
+
+                            <strong>No existen sincronizaciones registradas.</strong>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock %}

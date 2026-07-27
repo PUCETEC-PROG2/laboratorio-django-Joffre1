@@ -3,7 +3,7 @@
 {% block content %}
 
 <p class="mb-3">
-    Has elegido el Pokémon:
+    Has elegido el Pokémon en <strong>PostgreSQL</strong>:
     <strong>
         {{ pokemon.name|capfirst }}
         {% if mongo_data.favorite %}
@@ -34,7 +34,7 @@
 
 <hr>
 
-<h3>Información almacenada en MongoDB</h3>
+<h3>Información adicional</h3>
 
 <p>
     <strong>Veces visto:</strong>
@@ -46,77 +46,64 @@
     {{ mongo_data.lastViewed }}
 </p>
 
-<form method="POST" action="{% url 'pokedex:save_mongo_data' pokemon.id %}">
+<p>
 
-    {% csrf_token %}
+    <strong>Favorito:</strong>
 
-    <div class="form-check mb-3">
+    {% if pokemon.favorite %}
 
-        <input
-            class="form-check-input"
-            type="checkbox"
-            id="favorite"
-            name="favorite"
-            {% if mongo_data.favorite %}checked{% endif %}
-        >
+        ⭐ Sí
 
-        <label class="form-check-label" for="favorite">
-            Pokémon favorito
-        </label>
+    {% else %}
 
-    </div>
+        ❌ No
 
-    <div class="mb-3">
+    {% endif %}
 
-        <label class="form-label">
-            Comentario
-        </label>
+</p>
 
-        <textarea
-            class="form-control"
-            rows="4"
-            name="comment"
-            placeholder="Escribe un comentario sobre este Pokémon...">{{ mongo_data.comment }}</textarea>
+<p>
 
-    </div>
+    <strong>Comentario:</strong>
 
-    <div class="mb-3">
+    {% if pokemon.comment %}
 
-        <label class="form-label">
-            Etiquetas
-        </label>
+        {{ pokemon.comment }}
 
-        <input
-            class="form-control"
-            type="text"
-            name="tags"
-            placeholder="Ejemplo: Inicial, Kanto, Planta"
-            value="{% if mongo_data.tags %}{{ mongo_data.tags|join:', ' }}{% endif %}">
+    {% else %}
 
-        <small class="text-muted">
-            Separe las etiquetas utilizando comas.
-        </small>
+        Sin comentarios.
 
-    </div>
+    {% endif %}
 
-    <button class="btn btn-success">
-        Guardar información en MongoDB
-    </button>
+</p>
 
-    <a
-    href="{% url 'pokedex:clear_mongo_data' pokemon.id %}"
-    class="btn btn-danger ms-2">
+<p>
+    <strong>Etiquetas:</strong>
 
-    Limpiar información de MongoDB
+    {% if pokemon.tags %}
 
-</a>
+         <span class="badge bg-warning text-dark">
 
-</form>
+            🏷️ {{ pokemon.tags }}
+
+        </span>
+
+
+    {% else %}
+        Sin etiquetas.
+    {% endif %}
+</p>
 
 <hr>
 
-<a href="{% url 'pokedex:index' %}" class="btn btn-danger">
-    Regresar
-</a>
+
+<a href="{% url 'pokedex:index' %}" class="btn btn-outline-danger rounded-pill">
+
+        <i class="fa-solid fa-arrow-left me-1"></i>
+
+        Regresar
+
+    </a>
 
 {% endblock content %}

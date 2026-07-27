@@ -4,13 +4,13 @@
 
 <h2>
 
-{% if edit %}
+{% if form.instance.pk %}
 
-Editar Pokémon (MongoDB)
+Editar Pokémon (PostgreSQL)
 
 {% else %}
 
-Agregar Pokémon (MongoDB)
+Agregar Pokémon (PostgreSQL)
 
 {% endif %}
 
@@ -26,10 +26,7 @@ Agregar Pokémon (MongoDB)
 
         <label>Nombre</label>
 
-        <input
-    class="form-control"
-    name="name"
-    value="{{ pokemon.name|default:'' }}">
+        {{ form.name }}
 
     </div>
 
@@ -37,10 +34,7 @@ Agregar Pokémon (MongoDB)
 
         <label>Tipo</label>
 
-        <input
-    class="form-control"
-    name="type"
-    value="{{ pokemon.type|default:'' }}">
+        {{ form.type }}
 
     </div>
 
@@ -48,11 +42,7 @@ Agregar Pokémon (MongoDB)
 
         <label>Peso</label>
 
-        <input
-    class="form-control"
-    type="number"
-    name="weight"
-    value="{{ pokemon.weight|default:'' }}">
+        {{ form.weight }}
 
     </div>
 
@@ -60,20 +50,16 @@ Agregar Pokémon (MongoDB)
 
         <label>Altura</label>
 
-        <input
-    class="form-control"
-    type="number"
-    name="height"
-    value="{{ pokemon.height|default:'' }}">
+        {{ form.height }}
 
     </div>
 
-    {% if edit and pokemon.picture %}
+    {% if form.instance.picture %}
 
         <div class="mb-3">
 
             <img
-                src="/media/{{ pokemon.picture }}"
+                src="{{ form.instance.picture.url }}"
                 style="max-width:200px;">
 
         </div>
@@ -84,85 +70,68 @@ Agregar Pokémon (MongoDB)
 
         <label>Imagen</label>
 
-        <input
-            type="file"
-            class="form-control"
-            name="picture">
+        {{ form.picture }}
 
     </div>
 
     <div class="form-check mb-3">
 
-    <input
-    class="form-check-input"
-    type="checkbox"
-    id="favorite"
-    name="favorite"
-    {% if pokemon.favorite %}checked{% endif %}>
+        {{ form.favorite }}
 
-    <label class="form-check-label" for="favorite">
+        <label class="form-check-label">
 
-        Pokémon favorito
+            Pokémon favorito
 
-    </label>
+        </label>
 
-</div>
+    </div>
 
-<div class="mb-3">
+    <div class="mb-3">
 
-    <label class="form-label">
+        <label>Comentario</label>
 
-        Comentario
+        {{ form.comment }}
 
-    </label>
+    </div>
 
-    <textarea
-    class="form-control"
-    rows="4"
-    name="comment">{{ pokemon.comment|default:'' }}</textarea>
+    <div class="mb-3">
 
-</div>
+        <label>Etiquetas</label>
 
-<div class="mb-3">
+{{ form.tags }}
 
-    <label class="form-label">
+<small class="text-muted">
 
-        Etiquetas
+    Separe las etiquetas usando comas.
 
-    </label>
+</small>
 
-   <input
-    class="form-control"
-    type="text"
-    name="tags"
-    value="{% if pokemon.tags %}{{ pokemon.tags|join:', ' }}{% endif %}">
+        <small class="text-muted">
 
-    <small class="text-muted">
+            Separe las etiquetas usando comas.
 
-        Separe las etiquetas usando comas.
+        </small>
 
-    </small>
-
-</div>
+    </div>
 
     <button class="btn btn-success">
 
-    <i class="fa-solid fa-floppy-disk me-1"></i>
+        <i class="fa-solid fa-floppy-disk me-1"></i>
 
-    {% if pokemon %}
+        {% if form.instance.pk %}
 
-        Guardar cambios
+            Guardar cambios
 
-    {% else %}
+        {% else %}
 
-        Guardar Pokémon
+            Guardar Pokémon
 
-    {% endif %}
+        {% endif %}
 
-</button>
+    </button>
 
     <a
-        href="{% url 'pokedex:mongo_index' %}"
+        href="{% url 'pokedex:index' %}"
         class="btn btn-danger">
 
         Cancelar
