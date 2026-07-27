@@ -1,0 +1,112 @@
+[{
+  "_id": {
+    "$oid": "6a5d85945e12c6f8140c167c"
+  },
+  "pokemonId": 1,
+  "name": "Bulbasur",
+  "type": "Agua",
+  "weight": 50,
+  "height": 100,
+  "picture": "pokemon_pictures/temp_nQZT8Za.png",
+  "favorite": false,
+  "comment": "",
+  "tags": [],
+  "timesViewed": 34,
+  "syncedAt": {
+    "$date": "2026-07-26T22:42:00.012Z"
+  },
+  "lastViewed": {
+    "$date": "2026-07-26T21:48:42.162Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a5d85945e12c6f8140c167d"
+  },
+  "pokemonId": 2,
+  "name": "Raichu",
+  "type": "Electricidad",
+  "weight": 20,
+  "height": 60,
+  "picture": "pokemon_pictures/026.png",
+  "favorite": true,
+  "comment": "Este es el mejor pokemon",
+  "tags": [],
+  "timesViewed": 11,
+  "syncedAt": {
+    "$date": "2026-07-26T22:42:00.018Z"
+  },
+  "lastViewed": {
+    "$date": "2026-07-26T22:44:40.203Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a5d85945e12c6f8140c167e"
+  },
+  "pokemonId": 13,
+  "name": "Sandshrew",
+  "type": "Tierra",
+  "weight": 22,
+  "height": 122,
+  "picture": "pokemon_pictures/temp_EE72E3w.webp",
+  "favorite": true,
+  "comment": "Este parece un puercoespín ",
+  "tags": [
+    "Inicial",
+    " Kanto"
+  ],
+  "timesViewed": 9,
+  "syncedAt": {
+    "$date": "2026-07-26T22:42:00.024Z"
+  },
+  "lastViewed": {
+    "$date": "2026-07-26T22:05:50.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a5d85945e12c6f8140c167f"
+  },
+  "pokemonId": 18,
+  "name": "Steelix",
+  "type": "Piedra",
+  "weight": 50,
+  "height": 59,
+  "picture": "pokemon_pictures/temp_ZgQb9xq.png",
+  "favorite": false,
+  "comment": "adsafdsffda",
+  "tags": [
+    "Raro"
+  ],
+  "timesViewed": 39,
+  "syncedAt": {
+    "$date": "2026-07-26T22:42:00.028Z"
+  },
+  "lastViewed": {
+    "$date": "2026-07-26T22:45:12.919Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a637729a62a11f6c4a6c379"
+  },
+  "pokemonId": 20,
+  "name": "Jigglypuff",
+  "type": "Hada",
+  "weight": 6,
+  "height": 1,
+  "picture": "pokemon_pictures/images.jfif",
+  "favorite": true,
+  "comment": "Es un pokemon pequeño y rosado ",
+  "tags": [
+    "Planta"
+  ],
+  "timesViewed": 10,
+  "lastViewed": {
+    "$date": "2026-07-26T22:46:43.045Z"
+  },
+  "syncedAt": {
+    "$date": "2026-07-26T22:42:00.033Z"
+  }
+}]

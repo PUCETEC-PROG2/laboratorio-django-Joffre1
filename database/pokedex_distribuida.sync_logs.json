@@ -1,0 +1,810 @@
+[{
+  "_id": {
+    "$oid": "6a5d7da315ed5f2ac5ac9f9a"
+  },
+  "date": {
+    "$date": "2026-07-19T20:45:07.594Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5d85945e12c6f8140c1681"
+  },
+  "date": {
+    "$date": "2026-07-19T21:19:00.683Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e367d872b48fc1420f9c5"
+  },
+  "date": {
+    "$date": "2026-07-20T09:53:49.714Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e3c0ec5bdb4cf7f9a5c69"
+  },
+  "date": {
+    "$date": "2026-07-20T10:17:34.836Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e3c0ec5bdb4cf7f9a5c6a"
+  },
+  "date": {
+    "$date": "2026-07-20T10:17:34.859Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e3dc91d584148a3dce9e7"
+  },
+  "date": {
+    "$date": "2026-07-20T10:24:57.605Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 4,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e3dc91d584148a3dce9e8"
+  },
+  "date": {
+    "$date": "2026-07-20T10:24:57.628Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 4,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e401fda88141c1bebd26c"
+  },
+  "date": {
+    "$date": "2026-07-20T10:34:55.975Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 4,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e4020da88141c1bebd26d"
+  },
+  "date": {
+    "$date": "2026-07-20T10:34:56.002Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 4,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e4c992e1bc8427bb3ce4b"
+  },
+  "date": {
+    "$date": "2026-07-20T11:28:09.120Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 4,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e4c992e1bc8427bb3ce4c"
+  },
+  "date": {
+    "$date": "2026-07-20T11:28:09.128Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 4,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e51442e1bc8427bb3ce4e"
+  },
+  "date": {
+    "$date": "2026-07-20T11:48:04.537Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e51442e1bc8427bb3ce4f"
+  },
+  "date": {
+    "$date": "2026-07-20T11:48:04.547Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e522a2e1bc8427bb3ce50"
+  },
+  "date": {
+    "$date": "2026-07-20T11:51:54.392Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e522a2e1bc8427bb3ce51"
+  },
+  "date": {
+    "$date": "2026-07-20T11:51:54.403Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e526f2e1bc8427bb3ce53"
+  },
+  "date": {
+    "$date": "2026-07-20T11:53:03.207Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 6,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e526f2e1bc8427bb3ce54"
+  },
+  "date": {
+    "$date": "2026-07-20T11:53:03.219Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 6,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e52d92e1bc8427bb3ce55"
+  },
+  "date": {
+    "$date": "2026-07-20T11:54:49.815Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a5e52d92e1bc8427bb3ce56"
+  },
+  "date": {
+    "$date": "2026-07-20T11:54:49.826Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a6374bbd372084e7754c92e"
+  },
+  "date": {
+    "$date": "2026-07-24T09:20:43.825Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a6374bbd372084e7754c92f"
+  },
+  "date": {
+    "$date": "2026-07-24T09:20:43.851Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a637729a62a11f6c4a6c37a"
+  },
+  "date": {
+    "$date": "2026-07-24T09:31:05.721Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS"
+},
+{
+  "_id": {
+    "$oid": "6a6428be938805c476de4e31"
+  },
+  "date": {
+    "$date": "2026-07-24T22:08:46.707Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 6,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a64290f938805c476de4e32"
+  },
+  "date": {
+    "$date": "2026-07-24T22:10:07.270Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a642915938805c476de4e33"
+  },
+  "date": {
+    "$date": "2026-07-24T22:10:13.824Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a64293c938805c476de4e34"
+  },
+  "date": {
+    "$date": "2026-07-24T22:10:52.329Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a64299c938805c476de4e35"
+  },
+  "date": {
+    "$date": "2026-07-24T22:12:28.842Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a6429b0938805c476de4e36"
+  },
+  "date": {
+    "$date": "2026-07-24T22:12:48.653Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a6429ca938805c476de4e38"
+  },
+  "date": {
+    "$date": "2026-07-24T22:13:14.769Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 6,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a6429f6938805c476de4e39"
+  },
+  "date": {
+    "$date": "2026-07-24T22:13:58.101Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a642a06938805c476de4e3a"
+  },
+  "date": {
+    "$date": "2026-07-24T22:14:14.820Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a642a34938805c476de4e3c"
+  },
+  "date": {
+    "$date": "2026-07-24T22:15:00.974Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 6,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a642a8f938805c476de4e3d"
+  },
+  "date": {
+    "$date": "2026-07-24T22:16:31.578Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a642ac2938805c476de4e3f"
+  },
+  "date": {
+    "$date": "2026-07-24T22:17:22.173Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a642b2d938805c476de4e40"
+  },
+  "date": {
+    "$date": "2026-07-24T22:19:09.991Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a642b3e938805c476de4e41"
+  },
+  "date": {
+    "$date": "2026-07-24T22:19:26.496Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a6432aec6a03a2edb50feb0"
+  },
+  "date": {
+    "$date": "2026-07-24T22:51:10.592Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a6432ffc6a03a2edb50feb2"
+  },
+  "date": {
+    "$date": "2026-07-24T22:52:31.402Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a64330ec6a03a2edb50feb3"
+  },
+  "date": {
+    "$date": "2026-07-24T22:52:46.417Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a643339c6a03a2edb50feb5"
+  },
+  "date": {
+    "$date": "2026-07-24T22:53:29.951Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a643342c6a03a2edb50feb6"
+  },
+  "date": {
+    "$date": "2026-07-24T22:53:38.296Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a6434322fa3ae871fe1fbe2"
+  },
+  "date": {
+    "$date": "2026-07-24T22:57:38.981Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 0,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a64346a2fa3ae871fe1fbe3"
+  },
+  "date": {
+    "$date": "2026-07-24T22:58:34.085Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 0,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a643552ea68d8e464151a6a"
+  },
+  "date": {
+    "$date": "2026-07-24T23:02:26.246Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a64360eea68d8e464151a6b"
+  },
+  "date": {
+    "$date": "2026-07-24T23:05:34.464Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a643655ea68d8e464151a6d"
+  },
+  "date": {
+    "$date": "2026-07-24T23:06:45.070Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a643664ea68d8e464151a6e"
+  },
+  "date": {
+    "$date": "2026-07-24T23:07:00.764Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a6436a1ea68d8e464151a70"
+  },
+  "date": {
+    "$date": "2026-07-24T23:08:01.878Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 6,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a6436b3ea68d8e464151a71"
+  },
+  "date": {
+    "$date": "2026-07-24T23:08:19.063Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a6436bfea68d8e464151a73"
+  },
+  "date": {
+    "$date": "2026-07-24T23:08:31.890Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 6,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a6436d2ea68d8e464151a74"
+  },
+  "date": {
+    "$date": "2026-07-24T23:08:50.996Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a643844a54fd6a055ec4bae"
+  },
+  "date": {
+    "$date": "2026-07-24T23:15:00.791Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 6,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a643b89a0a34855881fc1ad"
+  },
+  "date": {
+    "$date": "2026-07-24T23:28:57.136Z"
+  },
+  "origin": "MongoDB",
+  "destination": "PostgreSQL",
+  "records": 1,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a643bdca0a34855881fc1af"
+  },
+  "date": {
+    "$date": "2026-07-24T23:30:20.673Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 6,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a643befa0a34855881fc1b0"
+  },
+  "date": {
+    "$date": "2026-07-24T23:30:39.766Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a64e6b7727988ba45f137a8"
+  },
+  "date": {
+    "$date": "2026-07-25T11:39:19.807Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 6,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a64e6d2727988ba45f137a9"
+  },
+  "date": {
+    "$date": "2026-07-25T11:39:46.705Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a64f87c727988ba45f137ab"
+  },
+  "date": {
+    "$date": "2026-07-25T12:55:08.566Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 6,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a66cb7e0ae9f563884ad973"
+  },
+  "date": {
+    "$date": "2026-07-26T22:07:42.805Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a66d1637d18a4cbb561ffdd"
+  },
+  "date": {
+    "$date": "2026-07-26T22:32:51.685Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+},
+{
+  "_id": {
+    "$oid": "6a66d3887d18a4cbb561ffde"
+  },
+  "date": {
+    "$date": "2026-07-26T22:42:00.033Z"
+  },
+  "origin": "PostgreSQL",
+  "destination": "MongoDB",
+  "records": 5,
+  "status": "SUCCESS",
+  "errorsFound": 0,
+  "errorsSolved": 0
+}]

@@ -164,15 +164,6 @@ README.md
 
 ---
 
-# Autores
-
-- Joffre Verdezoto
-- Raúl Luna
-- David Puga
-- Andrés Tulcanaza
-
----
-
 # Observaciones
 
 PostgreSQL funciona como base de datos principal del sistema, mientras que MongoDB almacena información complementaria de cada Pokémon y permite la sincronización bidireccional entre ambas bases de datos.

@@ -403,12 +403,13 @@ def edit_mongo_pokemon(request, id):
         return redirect("pokedex:mongo_index")
 
     return render(
-        request,
-        "mongo_form.html",
-        {
-            "pokemon": pokemon
-        }
-    )
+    request,
+    "mongo_form.html",
+    {
+        "pokemon": pokemon,
+        "edit": True
+    }
+)
 
 
 @login_required
